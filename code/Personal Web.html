@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8"/>
+	<title>夏子奇作业</title>
+	<link rel="stylesheet" type="text/css" href="../css/Personal Web.css">
+	<link rel="stylesheet" type="text/css" href="../base/base.css">
+	<script src="../js/move.js"></script>
+	<style>
+		
+	</style>
+	<script>
+	;(function(){
+		function screenchange(){
+			var font=document.documentElement.clientWidth/(1366/20);
+			document.documentElement.style.fontSize=font+'px';
+		}
+		window.addEventListener('resize',screenchange,false);
+		screenchange();
+	})();
+	window.onload=function(ev){
+		var timer=null;
+		var n=-1;
+		var oNav=document.getElementById('nav');
+		var oBgs=document.getElementById('bgs');
+		var aBg=oBgs.children;
+		var bSys=false;
+
+		oNav.style.left='50%';
+		oNav.style.marginLeft=-oNav.offsetWidth/2+'px';
+		for (var i = 0; i < 5; i++) {
+			var oLi=document.createElement('li');
+			oLi.innerHTML='<a href="javascirpt:;" class="navFont">11111</a>';
+			var aLi=oNav.appendChild(oLi);
+		}
+		var nowLi=oNav.children;
+		var aA=document.getElementsByTagName('a');
+		
+		timer=setInterval(function(){
+			n++;
+			var timer2=null;
+			
+			if (n==4) {
+				clearInterval(timer);
+				timer2=setTimeout(function(){
+					bSys=true;
+					for (var i = 0; i < aA.length; i++) {
+						if (bSys) {
+							aA[i].style.display='block';
+						}
+					}
+					clearTimeout(timer2);
+				},1000)
+				
+			}
+			
+			nowLi[n].style.width='5rem';
+			nowLi[n].style.height='5rem';
+			nowLi[n].style.top='0px';
+			nowLi[n].style.left=(n+n+0.5)*10+'%';
+			// console.log((n+n+0.5)*10+'%');
+			nowLi[n].style.border='1px solid #52B128';
+			nowLi[n].style.transform='rotate(360deg)';
+		},500);
+		
+		for (var i = 0; i < nowLi.length; i++) {
+			nowLi[i].index=i;
+			nowLi[i].onmouseover=function(ev){
+				var oEvent=ev||event;
+				var oFrom=oEvent.fromElement||oEvent.relatedTarget;
+				if (nowLi[this.index].contains(oFrom)) return;
+				move(oBgs,{top:-oBgs.offsetHeight*this.index},{type:Tween.Back.easeIn})
+			}
+
+		}
+		// 背景轮播
+		// ;(function(){
+		// 	var oBgs=document.getElementById('bgs');
+		// 	var aBg=oBgs.children;
+
+		// })();
+	}
+	</script>
+</head>
+<body>
+	<div id="box">
+		
+		<div id="aa"></div>
+		<div id="bg0">
+			<ul id="nav">
+				
+			</ul>
+		</div>
+		<div id="music">
+			<audio src="../audio/rouse.mp3" controls autoplay loop></audio>
+		</div>
+		<div id="bgs">
+			<div class="bg1"></div>
+			<div class="bg2"></div>
+			<div class="bg3"></div>
+			<div class="bg4"></div>
+			<div class="bg5"></div>
+		</div>
+	</div>
+</body>
+</html>
