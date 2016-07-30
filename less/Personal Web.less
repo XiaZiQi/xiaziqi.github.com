@@ -1,63 +1,79 @@
 body,html{
 	height: 100%;
-	width:100%;
 	overflow:hidden;
+	margin:0 auto;
 }
 #box{
+	width: 100%;
 	height:100%;
 	background: #000;
 }
-#bg0{
-	li{
-		width: 0;
-		height: 0;
-		background: #000;
-		position:absolute;
-		top:500px;
-		left:68.3rem;
-		transition:all 1s;
-		border:0px solid #52B128;
-		cursor:pointer;
-	}
-}
+
 #bgs{
 	width:100%;
+	min-width: 1000px;
 	height:100%;
 	position:absolute;
 	z-index: 1;
 	top:0;
 }
-.bg1,.bg2,.bg3,.bg4,.bg5{
-	width:100%;
-	height:100%;
-}
 .bg1{
-	background: url(../img/bg1-1.jpg) no-repeat;
+	background: url(../img/bg1-2.jpg) no-repeat center center;
+	span{
+		background:url(../img/bg1-1.jpg) no-repeat center center;
+	}
 }
 .bg2{
-	background: url(../img/bg2-1.jpg) no-repeat;
+	background: url(../img/bg2-2.jpg) no-repeat center center;
+	span{
+		background:url(../img/bg2-1.jpg) no-repeat center center;
+	}
 }
 .bg3{
-	background: url(../img/bg3-1.jpg) no-repeat;
+	background: url(../img/bg3-2.jpg) no-repeat center center;
+	span{
+		background:url(../img/bg3-1.jpg) no-repeat center center;
+	}
 }
 .bg4{
-	background: url(../img/bg4-1.jpg) no-repeat;
+	background: url(../img/bg4-2.jpg) no-repeat center center;
+	span{
+		background:url(../img/bg4-1.jpg) no-repeat center center;
+	}
 }
 .bg5{
-	background: url(../img/bg5-1.jpg) no-repeat;
+	background: url(../img/bg5-2.jpg) no-repeat center center;
+	span{
+		background:url(../img/bg5-1.jpg) no-repeat center center;
+	}
+}
+#bg0{
+	position:absolute;
+	width: 100%;
+	height:5rem;
+	top:3rem;
+	left:0;
+	li{
+		width: 0;
+		height: 0;
+		background: #000;
+		position:absolute;
+		top:25rem;
+		left:68.3rem;
+		transition:all 1s;
+		border:0px solid #52B128;
+		cursor:pointer;
+		z-index: 20;
+	}
 }
 #nav{
-	width: 1094px;
-	height:100px;
-	left:50%;
+	width: 90rem;
+	height:5rem;
 	position:relative;
-	position: absolute;
-	top:50px;
-	z-index: 5;
 }
 #music{
-	width: 300px;
-	height: 30px;
+	width: 15rem;
+	height: 1.5rem;
 	position:absolute;
 	z-index: 50;
 	top:0;
@@ -66,4 +82,20 @@ body,html{
 .navFont{
 	color:red;
 	display:none;
+}
+.bg1,.bg2,.bg3,.bg4,.bg5{
+	width:100%;
+	min-width: 1000px;
+	height:100%;
+	background-size: 100% 100%;
+	position:relative;
+	span{
+		position:absolute;
+		min-width: 62.25px;
+		top:0;
+		left:0;
+		background-size:96rem 800%;
+		transform-style: preserve-3d;
+		transition:1s all cubic-bezier(0.73, 0.07, 0.31, 0.96);
+	}
 }
