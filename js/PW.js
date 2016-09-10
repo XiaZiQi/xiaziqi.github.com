@@ -98,55 +98,46 @@
 
 			switch (index){
 				case 0:
-					oDiv.innerHTML='<div class="header">iScroll</div>'+
+					oDiv.innerHTML='<div class="header">首&nbsp&nbsp页</div>'+
 								    '<div class="wrapper">'+
 										'<div id="scroller0">'+
 											'<ul class="ulist">'+
-												'<li>11111</li>'+
-												'<li>22222</li>'+
-												'<li>33333</li>'+
-												'<li>44444</li>'+
-												'<li>55555</li>'+
-												'<li>66666</li>'+
-												'<li>77777</li>'+
-												'<li>88888</li>'+
-												'<li>99999</li>'+
-												'<li>aaaaa</li>'+
-												'<li>bbbbb</li>'+
-												'<li>ccccc</li>'+
-												'<li>ddddd</li>'+
-												'<li>eeeee</li>'+
-												'<li>fffff</li>'+
-												'<li>ggggg</li>'+
-												'<li>hhhhh</li>'+
-												'<li>iiiii</li>'+
-												'<li>jjjjj</li>'+
-												'<li>kkkkk</li>'+
-												'<li>lllll</li>'+
-												'<li>mmmmm</li>'+
-												'<li>nnnnn</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
-												'<li>11111</li>'+
+												'<li>'+
+													'<img src="img/h5.png"></img>'+
+													'<a href="http://www.w3schools.com/" target="_blank">HTML5</a>'+
+												'</li>'+
+												'<li>'+
+													'<img src="img/c3.png"></img>'+
+													'<a href="http://www.w3schools.com/" target="_blank">CSS3</a>'+
+												'</li>'+
+												'<li>'+
+													'<img src="img/js.png"></img>'+
+													'<a href="http://www.w3schools.com/" target="_blank">Javascript</a>'+
+												'</li>'+
+												'<li>'+
+													'<img src="img/jquery.png" style="background:#b3d4fc;"></img>'+
+													'<a href="http://jquery.com/" target="_blank">Jquery.js</a>'+
+												'</li>'+
+												'<li>'+
+													'<img src="img/github.jpg" style="padding:0; width:7.5rem;"></img>'+
+													'<a href="https://github.com/" target="_blank">Github.com</a>'+
+												'</li>'+
+												'<li>'+
+													'<img src="img/grunt.png"></img>'+
+													'<a href="http://gruntjs.com/" target="_blank">Grunt</a>'+
+												'</li>'+
+												'<li>'+
+													'<img src="img/gulp.png" style="padding:0; width:7.5rem;"></img>'+
+													'<a href="http://gulpjs.com/" target="_blank">Gulpjs.com</a>'+
+												'</li>'+
+												'<li>'+
+													'<img src="img/angular.png" style="padding:0 1rem 0 0.5rem; width:6rem;"></img>'+
+													'<a href="https://angularjs.org/" target="_blank">Angularjs.org</a>'+
+												'</li>'+
+												'<li>'+
+													'<img src="img/phonegap.png" style="padding:0; width:7.5rem;"></img>'+
+													'<a href="http://phonegap.com/" target="_blank">PhoneGap.com</a>'+
+												'</li>'+
 											'</ul>'+
 											'<div class="barbg">'+
 												'<div class="bar"></div>'+
@@ -160,31 +151,31 @@
 										'</div>'+
 										'<p class="lh"></p>'+
 									'</div>';
-									loaded(index);
-									
+									loaded();
+								
 				break;
 				case 1:
-					oDiv.innerHTML='<div class="header">iScroll</div>'+
+					oDiv.innerHTML='<div class="header">演&nbsp&nbsp示</div>'+
 								    '<div class="wrapper">'+
 										'<div id="scroller1">'+
 											'<ul class="ulist">'+
-												'<li>22222</li>'+
-												'<li>22222</li>'+
-												'<li>22222</li>'+
-												'<li>22222</li>'+
-												'<li>22222</li>'+
-												'<li>22222</li>'+
-												'<li>22222</li>'+
-												'<li>22222</li>'+
-												'<li>22222</li>'+
-												'<li>22222</li>'+
-												'<li>22222</li>'+
-												'<li>22222</li>'+
-												'<li>22222</li>'+
-												'<li>22222</li>'+
-												'<li>22222</li>'+
-												'<li>22222</li>'+
-												'<li>22222</li>'+
+												'<li>'+
+													'<img src="img/screen1.png" style="padding:0; width:7.5rem;"></img>'+
+													'<a href="demo/mac/mac.html" target="_blank">仿Mac系统桌面</a>'+
+												'</li>'+
+												'<li>'+
+													'<img src="img/3dturn.png" style="padding:0; width:7.5rem;"></img>'+
+													'<a href="demo/3dturn/3dturn.html" target="_blank">《饥荒》3D轮转角色选择</a>'+
+												'</li>'+
+												'<li>'+
+													'<img src="img/3dcube.png" style="padding:0; width:7.5rem;"></img>'+
+													'<a href="demo/cube/3dcube.html" target="_blank">3D旋转魔方</a>'+
+												'</li>'+
+												'<li>'+
+													'<img src="img/jigsaw.png" style="padding:0; width:7.5rem;"></img>'+
+													'<a href="demo/jigsaw/jigsaw.html" target="_blank">拼图游戏</a>'+
+												'</li>'+
+												
 											'</ul>'+
 											'<div class="barbg">'+
 												'<div class="bar"></div>'+
@@ -198,31 +189,19 @@
 										'</div>'+
 										'<p class="lh"></p>'+
 									'</div>';
-									loaded(index);
+									loaded();
 									
 				break;
 				case 2:
-					oDiv.innerHTML='<div class="header">iScroll</div>'+
+					oDiv.innerHTML='<div class="header">个人简介</div>'+
 								    '<div class="wrapper">'+
 										'<div id="scroller2">'+
 											'<ul class="ulist">'+
-												'<li>33333</li>'+
-												'<li>33333</li>'+
-												'<li>33333</li>'+
-												'<li>33333</li>'+
-												'<li>33333</li>'+
-												'<li>33333</li>'+
-												'<li>33333</li>'+
-												'<li>33333</li>'+
-												'<li>33333</li>'+
-												'<li>33333</li>'+
-												'<li>33333</li>'+
-												'<li>33333</li>'+
-												'<li>33333</li>'+
-												'<li>33333</li>'+
-												'<li>33333</li>'+
-												'<li>33333</li>'+
-												'<li>33333</li>'+
+												'<li>'+
+													'<img src="img/photo.png" style="padding:0; width:7.5rem;"></img>'+
+													'<a href="demo/photo/photo.html" target="_blank">个人业余摄影作品</a>'+
+												'</li>'+
+												
 											'</ul>'+
 											'<div class="barbg">'+
 												'<div class="bar"></div>'+
@@ -236,31 +215,17 @@
 										'</div>'+
 										'<p class="lh"></p>'+
 									'</div>';
-									loaded(index);
+									loaded();
 									
 				break;
 				case 3:
-					oDiv.innerHTML='<div class="header">iScroll</div>'+
+					oDiv.innerHTML='<div class="header">个人博客</div>'+
 								    '<div class="wrapper">'+
 										'<div id="scroller3">'+
 											'<ul class="ulist">'+
-												'<li>44444</li>'+
-												'<li>44444</li>'+
-												'<li>44444</li>'+
-												'<li>44444</li>'+
-												'<li>44444</li>'+
-												'<li>44444</li>'+
-												'<li>44444</li>'+
-												'<li>44444</li>'+
-												'<li>44444</li>'+
-												'<li>44444</li>'+
-												'<li>44444</li>'+
-												'<li>44444</li>'+
-												'<li>44444</li>'+
-												'<li>44444</li>'+
-												'<li>44444</li>'+
-												'<li>44444</li>'+
-												'<li>44444</li>'+
+												'<li>'+
+													'<a href="javascript:;">Nothing</a>'+
+												'</li>'+
 											'</ul>'+
 											'<div class="barbg">'+
 												'<div class="bar"></div>'+
@@ -274,31 +239,31 @@
 										'</div>'+
 										'<p class="lh"></p>'+
 									'</div>';
-									loaded(index);
+									loaded();
 									
 				break;
 				case 4:
-					oDiv.innerHTML='<div class="header">iScroll</div>'+
+					oDiv.innerHTML='<div class="header">联系方式</div>'+
 								    '<div class="wrapper">'+
 										'<div id="scroller4">'+
 											'<ul class="ulist">'+
-												'<li>55555</li>'+
-												'<li>55555</li>'+
-												'<li>55555</li>'+
-												'<li>55555</li>'+
-												'<li>55555</li>'+
-												'<li>55555</li>'+
-												'<li>55555</li>'+
-												'<li>55555</li>'+
-												'<li>55555</li>'+
-												'<li>55555</li>'+
-												'<li>55555</li>'+
-												'<li>55555</li>'+
-												'<li>55555</li>'+
-												'<li>55555</li>'+
-												'<li>55555</li>'+
-												'<li>55555</li>'+
-												'<li>55555</li>'+
+												'<li>'+
+													'<img src="img/phone.png" style="padding:0;margin:2rem; width:3.5rem; height:3.5rem; border:none;"></img>'+
+													'<a href="javascript:;">186-1080-8458</a>'+
+												'</li>'+
+												'<li>'+
+													'<img src="img/email.png" style="padding:0;margin:2rem; width:3.5rem; height:3.5rem; border:none;"></img>'+
+													'<a href="javascript:;">443566888@qq.com</a>'+
+												'</li>'+
+												'<li>'+
+													'<img src="img/weixin.png" style="padding:0;margin:2rem; width:3.5rem; height:3.5rem; border:none;"></img>'+
+													'<a href="javascript:;">XZQ66888</a>'+
+												'</li>'+
+												'<li>'+
+													'<img src="img/QQ.jpg" style="padding:0;margin:2rem; width:3.5rem; height:3.5rem; border:none;"></img>'+
+													'<a href="javascript:;">443566888</a>'+
+												'</li>'+
+												
 											'</ul>'+
 											'<div class="barbg">'+
 												'<div class="bar"></div>'+
@@ -312,7 +277,7 @@
 										'</div>'+
 										'<p class="lh"></p>'+
 									'</div>';
-									loaded(index);
+									loaded();
 									
 				break;
 			}
@@ -350,20 +315,25 @@
 		var oBox=document.getElementById("box");
 		var timer3=null;
 		var timer4=null;
+		var timer5=null;
 		var oBoss=document.getElementById('boss');
 		
 
 		for (var i = 0; i < 5; i++) {
 			var oLi=document.createElement('li');
+			var oNavbor=document.createElement('p');
 			oLi.innerHTML='<a href="javascirpt:;" class="navFont"></a>';
 			var aLi=oNav.appendChild(oLi);
 			// 获取content
 			var cDiv=aBg[i].getElementsByTagName('div');
+			oNavbor.setAttribute("class","navbor");
+			var aNavbor=oNav.appendChild(oNavbor);
 			
 		}
-		var nowLi=oNav.children;
+		var nowLi=oNav.getElementsByTagName('li');
+		var nowP=oNav.getElementsByTagName('p');
 		var aA=document.getElementsByTagName('a');
-	
+		var maskon=false;
 		timer=setInterval(function(){
 			n++;
 			var timer2=null;
@@ -375,25 +345,31 @@
 					for (var i = 0; i < aA.length; i++) {
 						if (bSys) {
 							aA[i].style.display='block';
+							nowP[0].style.display='block';
+							nowLi[0].style.webkitBoxShadow='';
+							maskon=true;
 						}
 					}
 					clearTimeout(timer2);
-				},1000)
+				},1000);
 			};
 
-			nowLi[n].style.top='0rem';
+			nowLi[n].style.top=0+'rem';
 			nowLi[n].style.left=Math.abs(n*25-n*5 + 5)+'rem';
 			nowLi[n].style.width='5rem';
 			nowLi[n].style.height='5rem';
-			nowLi[n].style.border='1px solid #52B128';
-			nowLi[n].style.transform='rotate(360deg)';
-			nowLi[0].innerHTML='<a href="javascirpt:;" class="navFont">1111</a>';
-			nowLi[1].innerHTML='<a href="javascirpt:;" class="navFont">2222</a>';
-			nowLi[2].innerHTML='<a href="javascirpt:;" class="navFont">3333</a>';
-			nowLi[3].innerHTML='<a href="javascirpt:;" class="navFont">4444</a>';
-			nowLi[4].innerHTML='<a href="javascirpt:;" class="navFont">5555</a>';
-		},500);
-
+			nowLi[n].style.border='0.1rem solid #fff';
+			nowLi[n].style.webkitBoxShadow='0rem 0rem 3rem #fff';
+			nowLi[0].innerHTML='<div class="mask">Home</div><a class="iconfont" href="javascirpt:;" >&#xe614;</a>';
+			nowLi[1].innerHTML='<div class="mask">Demo</div><a class="iconfont" href="javascirpt:;" >&#xe613;</a>';
+			nowLi[2].innerHTML='<div class="mask">Myself</div><a class="iconfont" href="javascirpt:;" >&#xe619;</a>';
+			nowLi[3].innerHTML='<div class="mask">Blog</div><a class="iconfont" href="javascirpt:;" >&#xe606;</a>';
+			nowLi[4].innerHTML='<div class="mask">Call</div><a class="iconfont" href="javascirpt:;" >&#xe62c;</a>';
+			nowP[n].style.width='5.2rem';
+			nowP[n].style.height='5.2rem';
+			nowP[n].style.left=Math.abs(n*25-n*5 + 5)-0.3+'rem';
+		},350);
+			
 		var oChange=-oBgs.offsetHeight;
 		var bReady=true;
 
@@ -407,18 +383,29 @@
 				aBg[i].innerHTML='';
 				nowLi[i].bsys=true;//开关
 				wind(aBg[i],i);
+				nowP[i].style.display='none';
+				nowLi[i].style.webkitBoxShadow='0rem 0rem 3rem #fff';
+				nowP[0].style.display='block';
+				nowLi[0].style.webkitBoxShadow='';
 			}
 			oBgs.style.top=0+'px';
 		}
+
 		for (var i = 0; i < nowLi.length; i++) {
 			nowLi[i].index=i;
 			nowLi[i].bsys=true;
 			var onoff=true;
+
 			nowLi[i].onmouseover=function(ev){
 				var oEvent=ev||event;
 				var oFrom=oEvent.fromElement||oEvent.relatedTarget;
 				if (nowLi[this.index].contains(oFrom)) return;
-				move(oBgs,{top:oChange*this.index},{type:Tween.Back.easeIn});
+				var oMask=this.children[0];
+				var _this=this;
+				
+				move(oBgs,{top:oChange*_this.index},{type:Tween.Back.easeIn});
+				
+				
 				if (nowLi[this.index].bsys) {
 					createCon(aBg[this.index],this.index);
 					clearTimeout(timer3);
@@ -435,13 +422,99 @@
 						onoff=false;
 					},1000);
 				}
+				if (maskon) {
+					switch(findDir(this,ev)){
+						case 0:
+							oMask.style.left=6.05+'rem';
+							oMask.style.top=0;
+							break;
+						case 1:
+							oMask.style.left=0;
+							oMask.style.top=6.05+'rem';
+							break;
+						case 2:
+							oMask.style.left=-6.05+'rem';
+							oMask.style.top=0;
+							break;
+						case 3:
+							oMask.style.left=0;
+							oMask.style.top=-6.05+'rem';
+							break;
+					}
+					moveRem(oMask,{left:0,top:0},{type:Tween.Linear,time:300});
+				}
+
+				if (maskon) {
+					switch(this.index){
+						case 0:
+							for (var j = 0; j < nowP.length; j++) {
+								nowP[j].style.display='none';
+								nowLi[j].style.webkitBoxShadow='0rem 0rem 3rem #fff';
+							}
+							nowP[this.index].style.display='block';
+							nowLi[this.index].style.webkitBoxShadow='';
+							break;
+						case 1:
+							for (var j = 0; j < nowP.length; j++) {
+								nowP[j].style.display='none';
+								nowLi[j].style.webkitBoxShadow='0rem 0rem 3rem #fff';
+							}
+							nowP[this.index].style.display='block';
+							nowLi[this.index].style.webkitBoxShadow='';
+							break;
+						case 2:
+							for (var j = 0; j < nowP.length; j++) {
+								nowP[j].style.display='none';
+								nowLi[j].style.webkitBoxShadow='0rem 0rem 3rem #fff';
+								nowLi[this.index].style.webkitBoxShadow='';
+							}
+							nowP[this.index].style.display='block';
+							nowLi[this.index].style.webkitBoxShadow='';
+							break;
+						case 3:
+							for (var j = 0; j < nowP.length; j++) {
+								nowP[j].style.display='none';
+								nowLi[j].style.webkitBoxShadow='0rem 0rem 3rem #fff';
+								nowLi[this.index].style.webkitBoxShadow='';
+							}
+							nowP[this.index].style.display='block';
+							nowLi[this.index].style.webkitBoxShadow='';
+							break;
+						case 4:
+							for (var j = 0; j < nowP.length; j++) {
+								nowP[j].style.display='none';
+								nowLi[j].style.webkitBoxShadow='0rem 0rem 3rem #fff';
+								nowLi[this.index].style.webkitBoxShadow='';
+							}
+							nowP[this.index].style.display='block';
+							nowLi[this.index].style.webkitBoxShadow='';
+							break;
+
+					}
+				}
 			}
 
-			nowLi[i].onmouseout=function(){
+			nowLi[i].onmouseout=function(ev){
+				clearInterval(timer5);
 				var oEvent=ev||event;
 				var oFrom=oEvent.toElement||oEvent.relatedTarget;
 				if (nowLi[this.index].contains(oFrom)) return;
+				var oMask=this.children[0];
 				nowLi[this.index].bsys=false;
+				switch(findDir(this,ev)){
+					case 0:
+						moveRem(oMask,{left:6.05,top:0},{type:Tween.Linear,time:300});
+						break;
+					case 1:
+						moveRem(oMask,{left:0,top:6.05},{type:Tween.Linear,time:300});
+						break;
+					case 2:
+						moveRem(oMask,{left:-6.05,top:0},{type:Tween.Linear,time:300});
+						break;
+					case 3:
+						moveRem(oMask,{left:0,top:-6.05},{type:Tween.Linear,time:300});
+						break;
+				}
 			}
 			if (bReady) {
 				wind(aBg[i],i);

@@ -42,38 +42,3 @@ function move(obj,json,options){
 		}
 	},30);	
 }
-function moveRem(obj,json,options){
-	clearInterval(obj.timer);
-	var timer=null;
-	var start={};
-	var dis={};
-
-	for (var name in json){
-		start[name]=parseFloat(getStyle(obj,name))/20;
-		dis[name]=(json[name]-start[name]);
-		}
-// =========================================================
-//      不成立就走设的默认值，仿报错；
-		options=options || {};
-		options.time=options.time || 1000;
-		options.type=options.type || Tween.Bounce.easeOut;
-// =========================================================
-		var iCount=parseInt(options.time/30);
-		var n=0;
-		obj.timer=setInterval(function(){
-			n++;
-			for (var name in json){
-				var cur=options.type(options.time*n/iCount,start[name],json[name]-start[name],options.time);
-			if (name=='opacity') {
-				obj.style[name]=cur;
-				obj.style.filter=':alpha(opacity='+cur*100+')';
-			}else{
-				obj.style[name]=cur+'rem';
-			}
-			if (n==iCount){
-				clearInterval(obj.timer);
-				options.end && options.end();
-			}
-		}
-	},30);	
-}

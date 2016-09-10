@@ -80,35 +80,68 @@ html {
   top: 3rem;
   left: 0;
 }
-#bg0 li {
+#bg0 #nav {
+  width: 90rem;
+  height: 5rem;
+  position: relative;
+}
+#bg0 #nav .navbor {
+  position: absolute;
+  width: 0rem;
+  height: 0rem;
+  z-index: 290;
+  display: none;
+  top: -0.3rem;
+  border-radius: 50%;
+  border: 0.3rem solid #CD235C;
+  overflow: hidden;
+  opacity: 0.92;
+  filter: alpha(opacity=92);
+}
+#bg0 #nav li {
   width: 0;
   height: 0;
   background: #000;
   position: absolute;
-  top: 25rem;
-  left: 68.3rem;
-  transition: all 1s;
-  border: 0px solid #52B128;
+  top: -8rem;
+  transition: all 1s cubic-bezier(1, -2.55, 0, 3.83);
+  border: 0px solid #000;
   cursor: pointer;
-  z-index: 999;
-  border-radius: 30%;
+  z-index: 300;
+  border-radius: 50%;
+  overflow: hidden;
 }
-#nav {
-  width: 90rem;
+#bg0 #nav li .mask {
+  position: absolute;
+  left: -6.05rem;
+  top: 0;
+  background: #CD235C;
+  width: 5rem;
   height: 5rem;
-  position: relative;
+  border-radius: 50%;
+  opacity: 0.92;
+  filter: alpha(opacity=92);
+  z-index: 310;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 5rem;
+  font-weight: bold;
+}
+#bg0 #nav li .iconfont {
+  font-size: 3rem;
+  text-align: center;
+  line-height: 5rem;
+  color: #fff;
+  font-family: 'iconfont';
+  display: none;
 }
 #music {
   width: 15rem;
   height: 1.5rem;
   position: absolute;
   z-index: 50;
-  top: 0;
+  bottom: 0;
   right: 0;
-}
-.navFont {
-  color: red;
-  display: none;
 }
 .bg1,
 .bg2,
@@ -257,15 +290,9 @@ html {
 #scroller3 ul li,
 #scroller4 ul li {
   padding: 0 0.5rem;
-  height: 2rem;
-  line-height: 2rem;
   border-bottom: 1px solid #ccc;
-  border-top: 1px solid #fff;
+  overflow: hidden;
   background-color: #fafafa;
-  font-size: 0.7rem;
-  opacity: 1;
-  filter: alpha(opacity=100);
-  cursor: pointer;
 }
 .barbg {
   position: absolute;
@@ -317,4 +344,26 @@ html {
   border-radius: 50%;
   background: url(../img/button.png) center center no-repeat;
   background-size: 1.6rem 1.6rem;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('iconfont.eot');
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('iconfont.woff') format('woff'), /* chrome、firefox */ url('iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('iconfont.svg#iconfont') format('svg');
+  
+  /* IE9*/
+  /* iOS 4.1- */
+}
+.ulist li img {
+  width: 5rem;
+  height: 7.5rem;
+  float: left;
+  border-right: 1px solid #ccc;
+  padding: 0 1.5rem 0 1rem;
+}
+.ulist li a {
+  float: left;
+  line-height: 7.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  padding-left: 3rem;
 }

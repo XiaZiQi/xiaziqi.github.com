@@ -94,7 +94,7 @@ function drag2(con,header){
 		return false;
 	}
 }
-function loaded(index){
+function loaded(){
 	var oBgs=document.getElementById('bgs');
 	var aBg=oBgs.children;
 	var conbg=document.querySelectorAll('.conbg');
