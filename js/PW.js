@@ -322,36 +322,19 @@
 		var oLoad=document.getElementById('load');
         var oLoading=document.getElementById('loading');
 
-        var loadArr=[
-        	{src:'https://xiaziqi.github.io/img/bg1-1.jpg'},
-        	{src:'https://xiaziqi.github.io/img/bg1-2.jpg'},
-        	{src:'https://xiaziqi.github.io/img/bg1-3.jpg'},
-        	{src:'https://xiaziqi.github.io/img/bg2-1.jpg'},
-        	{src:'https://xiaziqi.github.io/img/bg2-2.jpg'},
-        	{src:'https://xiaziqi.github.io/img/bg2-3.jpg'},
-        	{src:'https://xiaziqi.github.io/img/bg3-1.jpg'},
-        	{src:'https://xiaziqi.github.io/img/bg3-2.jpg'},
-        	{src:'https://xiaziqi.github.io/img/bg3-3.jpg'},
-        	{src:'https://xiaziqi.github.io/img/bg4-1.jpg'},
-        	{src:'https://xiaziqi.github.io/img/bg4-2.jpg'},
-        	{src:'https://xiaziqi.github.io/img/bg4-3.jpg'},
-        	{src:'https://xiaziqi.github.io/img/bg5-1.jpg'},
-        	{src:'https://xiaziqi.github.io/img/bg5-2.jpg'},
-        	{src:'https://xiaziqi.github.io/img/bg5-3.jpg'}
-
-        ];
         
-        for(var i=0;i<=14;i++){
+        for(var i=0;i<77;i++){
             var oImg=new Image();
             var iCount=0;
 
             oImg.onload=function(){
                 iCount++;
-                var scale=iCount/15;
+                var scale=iCount/77;
                 oLoading.style.width=scale*300+'px';
                 if (iCount==14) {
 	            	oLoad.style.display='none';
 	            	oBox.style.display='block';
+	            	allLoad();
 	            }
             };
             oImg.onerror=function(){
@@ -360,7 +343,8 @@
             oImg.src=loadArr[i].src;
         }
 
-		for (var i = 0; i < 5; i++) {
+		function allLoad(){
+			for (var i = 0; i < 5; i++) {
 			var oLi=document.createElement('li');
 			var oNavbor=document.createElement('p');
 			oLi.innerHTML='<a href="javascirpt:;" class="navFont"></a>';
@@ -370,197 +354,196 @@
 			oNavbor.setAttribute("class","navbor");
 			var aNavbor=oNav.appendChild(oNavbor);
 			
-		}
-		var nowLi=oNav.getElementsByTagName('li');
-		var nowP=oNav.getElementsByTagName('p');
-		var aA=document.getElementsByTagName('a');
-		var maskon=false;
-		timer=setInterval(function(){
-			n++;
-			var timer2=null;
-			
-			if (n==4) {
-				clearInterval(timer);
-				timer2=setTimeout(function(){
-					bSys=true;
-					for (var i = 0; i < aA.length; i++) {
-						if (bSys) {
-							aA[i].style.display='block';
-							nowP[0].style.display='block';
-							nowLi[0].style.webkitBoxShadow='';
-							maskon=true;
+			}
+			var nowLi=oNav.getElementsByTagName('li');
+			var nowP=oNav.getElementsByTagName('p');
+			var aA=document.getElementsByTagName('a');
+			var maskon=false;
+			timer=setInterval(function(){
+				n++;
+				var timer2=null;
+				
+				if (n==4) {
+					clearInterval(timer);
+					timer2=setTimeout(function(){
+						bSys=true;
+						for (var i = 0; i < aA.length; i++) {
+							if (bSys) {
+								aA[i].style.display='block';
+								nowP[0].style.display='block';
+								nowLi[0].style.webkitBoxShadow='';
+								maskon=true;
+							}
+						}
+						clearTimeout(timer2);
+					},1000);
+				};
+
+				nowLi[n].style.top=0+'rem';
+				nowLi[n].style.left=Math.abs(n*25-n*5 + 5)+'rem';
+				nowLi[n].style.width='5rem';
+				nowLi[n].style.height='5rem';
+				nowLi[n].style.border='0.1rem solid #fff';
+				nowLi[n].style.webkitBoxShadow='0rem 0rem 3rem #fff';
+				nowLi[0].innerHTML='<div class="mask">Home</div><a class="iconfont" href="javascirpt:;" >&#xe614;</a>';
+				nowLi[1].innerHTML='<div class="mask">Demo</div><a class="iconfont" href="javascirpt:;" >&#xe613;</a>';
+				nowLi[2].innerHTML='<div class="mask">Myself</div><a class="iconfont" href="javascirpt:;" >&#xe619;</a>';
+				nowLi[3].innerHTML='<div class="mask">Blog</div><a class="iconfont" href="javascirpt:;" >&#xe606;</a>';
+				nowLi[4].innerHTML='<div class="mask">Call</div><a class="iconfont" href="javascirpt:;" >&#xe62c;</a>';
+				nowP[n].style.width='5.2rem';
+				nowP[n].style.height='5.2rem';
+				nowP[n].style.left=Math.abs(n*25-n*5 + 5)-0.3+'rem';
+			},350);
+				
+			var oChange=-oBgs.offsetHeight;
+			var bReady=true;
+
+			window.onresize=function(ev){
+				var oEvent=ev||event;
+				oEvent.cancleBubble=true;
+				oChange=-oBgs.offsetHeight;
+				for (var i = 0; i < aBg.length; i++) {
+					bReady=false;
+					aBg[i].style.height=oChange/20+'rem';
+					aBg[i].innerHTML='';
+					nowLi[i].bsys=true;//开关
+					wind(aBg[i],i);
+					nowP[i].style.display='none';
+					nowLi[i].style.webkitBoxShadow='0rem 0rem 3rem #fff';
+					nowP[0].style.display='block';
+					nowLi[0].style.webkitBoxShadow='';
+				}
+				oBgs.style.top=0+'px';
+			}
+
+			for (var i = 0; i < nowLi.length; i++) {
+				nowLi[i].index=i;
+				nowLi[i].bsys=true;
+				var onoff=true;
+
+				nowLi[i].onmouseover=function(ev){
+					var oEvent=ev||event;
+					var oFrom=oEvent.fromElement||oEvent.relatedTarget;
+					if (nowLi[this.index].contains(oFrom)) return;
+					var oMask=this.children[0];
+					var _this=this;
+					
+					move(oBgs,{top:oChange*_this.index},{type:Tween.Back.easeIn});
+					
+					
+					if (nowLi[this.index].bsys) {
+						createCon(aBg[this.index],this.index);
+						clearTimeout(timer3);
+						var v=this.index;
+						timer3=setTimeout(function(){
+							show(aBg[v],v);
+							onoff=false;
+						},1000);
+					}else if(nowLi[this.index].bsys==false&&onoff==false){
+						clearTimeout(timer4);
+						var g=this.index;
+						timer4=setTimeout(function(){
+							show(aBg[g]);
+							onoff=false;
+						},1000);
+					}
+					if (maskon) {
+						switch(findDir(this,ev)){
+							case 0:
+								oMask.style.left=6.05+'rem';
+								oMask.style.top=0;
+								break;
+							case 1:
+								oMask.style.left=0;
+								oMask.style.top=6.05+'rem';
+								break;
+							case 2:
+								oMask.style.left=-6.05+'rem';
+								oMask.style.top=0;
+								break;
+							case 3:
+								oMask.style.left=0;
+								oMask.style.top=-6.05+'rem';
+								break;
+						}
+						moveRem(oMask,{left:0,top:0},{type:Tween.Linear,time:300});
+					}
+
+					if (maskon) {
+						switch(this.index){
+							case 0:
+								for (var j = 0; j < nowP.length; j++) {
+									nowP[j].style.display='none';
+									nowLi[j].style.webkitBoxShadow='0rem 0rem 3rem #fff';
+								}
+								nowP[this.index].style.display='block';
+								nowLi[this.index].style.webkitBoxShadow='';
+								break;
+							case 1:
+								for (var j = 0; j < nowP.length; j++) {
+									nowP[j].style.display='none';
+									nowLi[j].style.webkitBoxShadow='0rem 0rem 3rem #fff';
+								}
+								nowP[this.index].style.display='block';
+								nowLi[this.index].style.webkitBoxShadow='';
+								break;
+							case 2:
+								for (var j = 0; j < nowP.length; j++) {
+									nowP[j].style.display='none';
+									nowLi[j].style.webkitBoxShadow='0rem 0rem 3rem #fff';
+									nowLi[this.index].style.webkitBoxShadow='';
+								}
+								nowP[this.index].style.display='block';
+								nowLi[this.index].style.webkitBoxShadow='';
+								break;
+							case 3:
+								for (var j = 0; j < nowP.length; j++) {
+									nowP[j].style.display='none';
+									nowLi[j].style.webkitBoxShadow='0rem 0rem 3rem #fff';
+									nowLi[this.index].style.webkitBoxShadow='';
+								}
+								nowP[this.index].style.display='block';
+								nowLi[this.index].style.webkitBoxShadow='';
+								break;
+							case 4:
+								for (var j = 0; j < nowP.length; j++) {
+									nowP[j].style.display='none';
+									nowLi[j].style.webkitBoxShadow='0rem 0rem 3rem #fff';
+									nowLi[this.index].style.webkitBoxShadow='';
+								}
+								nowP[this.index].style.display='block';
+								nowLi[this.index].style.webkitBoxShadow='';
+								break;
+
 						}
 					}
-					clearTimeout(timer2);
-				},1000);
-			};
-
-			nowLi[n].style.top=0+'rem';
-			nowLi[n].style.left=Math.abs(n*25-n*5 + 5)+'rem';
-			nowLi[n].style.width='5rem';
-			nowLi[n].style.height='5rem';
-			nowLi[n].style.border='0.1rem solid #fff';
-			nowLi[n].style.webkitBoxShadow='0rem 0rem 3rem #fff';
-			nowLi[0].innerHTML='<div class="mask">Home</div><a class="iconfont" href="javascirpt:;" >&#xe614;</a>';
-			nowLi[1].innerHTML='<div class="mask">Demo</div><a class="iconfont" href="javascirpt:;" >&#xe613;</a>';
-			nowLi[2].innerHTML='<div class="mask">Myself</div><a class="iconfont" href="javascirpt:;" >&#xe619;</a>';
-			nowLi[3].innerHTML='<div class="mask">Blog</div><a class="iconfont" href="javascirpt:;" >&#xe606;</a>';
-			nowLi[4].innerHTML='<div class="mask">Call</div><a class="iconfont" href="javascirpt:;" >&#xe62c;</a>';
-			nowP[n].style.width='5.2rem';
-			nowP[n].style.height='5.2rem';
-			nowP[n].style.left=Math.abs(n*25-n*5 + 5)-0.3+'rem';
-		},350);
-			
-		var oChange=-oBgs.offsetHeight;
-		var bReady=true;
-
-		window.onresize=function(ev){
-			var oEvent=ev||event;
-			oEvent.cancleBubble=true;
-			oChange=-oBgs.offsetHeight;
-			for (var i = 0; i < aBg.length; i++) {
-				bReady=false;
-				aBg[i].style.height=oChange/20+'rem';
-				aBg[i].innerHTML='';
-				nowLi[i].bsys=true;//开关
-				wind(aBg[i],i);
-				nowP[i].style.display='none';
-				nowLi[i].style.webkitBoxShadow='0rem 0rem 3rem #fff';
-				nowP[0].style.display='block';
-				nowLi[0].style.webkitBoxShadow='';
-			}
-			oBgs.style.top=0+'px';
-		}
-
-		for (var i = 0; i < nowLi.length; i++) {
-			nowLi[i].index=i;
-			nowLi[i].bsys=true;
-			var onoff=true;
-
-			nowLi[i].onmouseover=function(ev){
-				var oEvent=ev||event;
-				var oFrom=oEvent.fromElement||oEvent.relatedTarget;
-				if (nowLi[this.index].contains(oFrom)) return;
-				var oMask=this.children[0];
-				var _this=this;
-				
-				move(oBgs,{top:oChange*_this.index},{type:Tween.Back.easeIn});
-				
-				
-				if (nowLi[this.index].bsys) {
-					createCon(aBg[this.index],this.index);
-					clearTimeout(timer3);
-					var v=this.index;
-					timer3=setTimeout(function(){
-						show(aBg[v],v);
-						onoff=false;
-					},1000);
-				}else if(nowLi[this.index].bsys==false&&onoff==false){
-					clearTimeout(timer4);
-					var g=this.index;
-					timer4=setTimeout(function(){
-						show(aBg[g]);
-						onoff=false;
-					},1000);
 				}
-				if (maskon) {
+
+				nowLi[i].onmouseout=function(ev){
+					clearInterval(timer5);
+					var oEvent=ev||event;
+					var oFrom=oEvent.toElement||oEvent.relatedTarget;
+					if (nowLi[this.index].contains(oFrom)) return;
+					var oMask=this.children[0];
+					nowLi[this.index].bsys=false;
 					switch(findDir(this,ev)){
 						case 0:
-							oMask.style.left=6.05+'rem';
-							oMask.style.top=0;
+							moveRem(oMask,{left:6.05,top:0},{type:Tween.Linear,time:300});
 							break;
 						case 1:
-							oMask.style.left=0;
-							oMask.style.top=6.05+'rem';
+							moveRem(oMask,{left:0,top:6.05},{type:Tween.Linear,time:300});
 							break;
 						case 2:
-							oMask.style.left=-6.05+'rem';
-							oMask.style.top=0;
+							moveRem(oMask,{left:-6.05,top:0},{type:Tween.Linear,time:300});
 							break;
 						case 3:
-							oMask.style.left=0;
-							oMask.style.top=-6.05+'rem';
+							moveRem(oMask,{left:0,top:-6.05},{type:Tween.Linear,time:300});
 							break;
 					}
-					moveRem(oMask,{left:0,top:0},{type:Tween.Linear,time:300});
 				}
-
-				if (maskon) {
-					switch(this.index){
-						case 0:
-							for (var j = 0; j < nowP.length; j++) {
-								nowP[j].style.display='none';
-								nowLi[j].style.webkitBoxShadow='0rem 0rem 3rem #fff';
-							}
-							nowP[this.index].style.display='block';
-							nowLi[this.index].style.webkitBoxShadow='';
-							break;
-						case 1:
-							for (var j = 0; j < nowP.length; j++) {
-								nowP[j].style.display='none';
-								nowLi[j].style.webkitBoxShadow='0rem 0rem 3rem #fff';
-							}
-							nowP[this.index].style.display='block';
-							nowLi[this.index].style.webkitBoxShadow='';
-							break;
-						case 2:
-							for (var j = 0; j < nowP.length; j++) {
-								nowP[j].style.display='none';
-								nowLi[j].style.webkitBoxShadow='0rem 0rem 3rem #fff';
-								nowLi[this.index].style.webkitBoxShadow='';
-							}
-							nowP[this.index].style.display='block';
-							nowLi[this.index].style.webkitBoxShadow='';
-							break;
-						case 3:
-							for (var j = 0; j < nowP.length; j++) {
-								nowP[j].style.display='none';
-								nowLi[j].style.webkitBoxShadow='0rem 0rem 3rem #fff';
-								nowLi[this.index].style.webkitBoxShadow='';
-							}
-							nowP[this.index].style.display='block';
-							nowLi[this.index].style.webkitBoxShadow='';
-							break;
-						case 4:
-							for (var j = 0; j < nowP.length; j++) {
-								nowP[j].style.display='none';
-								nowLi[j].style.webkitBoxShadow='0rem 0rem 3rem #fff';
-								nowLi[this.index].style.webkitBoxShadow='';
-							}
-							nowP[this.index].style.display='block';
-							nowLi[this.index].style.webkitBoxShadow='';
-							break;
-
-					}
+				if (bReady) {
+					wind(aBg[i],i);
 				}
-			}
-
-			nowLi[i].onmouseout=function(ev){
-				clearInterval(timer5);
-				var oEvent=ev||event;
-				var oFrom=oEvent.toElement||oEvent.relatedTarget;
-				if (nowLi[this.index].contains(oFrom)) return;
-				var oMask=this.children[0];
-				nowLi[this.index].bsys=false;
-				switch(findDir(this,ev)){
-					case 0:
-						moveRem(oMask,{left:6.05,top:0},{type:Tween.Linear,time:300});
-						break;
-					case 1:
-						moveRem(oMask,{left:0,top:6.05},{type:Tween.Linear,time:300});
-						break;
-					case 2:
-						moveRem(oMask,{left:-6.05,top:0},{type:Tween.Linear,time:300});
-						break;
-					case 3:
-						moveRem(oMask,{left:0,top:-6.05},{type:Tween.Linear,time:300});
-						break;
-				}
-			}
-			if (bReady) {
-				wind(aBg[i],i);
 			}
 		}
-		// document.addEventListener('onmousemove', function (e) { e.preventDefault(); }, false);
-
 	}
