@@ -331,7 +331,7 @@
                 iCount++;
                 var scale=iCount/77;
                 oLoading.style.width=scale*300+'px';
-                if (iCount==14) {
+                if (iCount==77) {
 	            	oLoad.style.display='none';
 	            	oBox.style.display='block';
 	            	allLoad();
