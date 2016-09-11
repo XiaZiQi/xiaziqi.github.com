@@ -37,12 +37,12 @@ var loadArr=[
         {src:'https://xiaziqi.github.io/img/sea.jpg'},
         {src:'https://xiaziqi.github.io/img/weixin.png'},
         // 饥荒
-        {src:'https://xiaziqi.github.io/demo/3Dturn/img/0.jpg'},
-        {src:'https://xiaziqi.github.io/demo/3Dturn/img/01.png'},
-        {src:'https://xiaziqi.github.io/demo/3Dturn/img/02.png'},
-        {src:'https://xiaziqi.github.io/demo/3Dturn/img/03.png'},
-        {src:'https://xiaziqi.github.io/demo/3Dturn/img/04.png'},
-        {src:'https://xiaziqi.github.io/demo/3Dturn/img/jt.png'},
+        {src:'https://xiaziqi.github.io/demo/3dround/img/0.jpg'},
+        {src:'https://xiaziqi.github.io/demo/3dround/img/01.png'},
+        {src:'https://xiaziqi.github.io/demo/3dround/img/02.png'},
+        {src:'https://xiaziqi.github.io/demo/3dround/img/03.png'},
+        {src:'https://xiaziqi.github.io/demo/3dround/img/04.png'},
+        {src:'https://xiaziqi.github.io/demo/3dround/img/jt.png'},
         // 魔方
         {src:'https://xiaziqi.github.io/demo/cube/img/bg.jpg'},
         // 拼图游戏
