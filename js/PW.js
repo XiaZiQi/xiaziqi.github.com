@@ -164,8 +164,8 @@
 													'<a href="demo/mac/mac.html" target="_blank">仿Mac系统桌面</a>'+
 												'</li>'+
 												'<li>'+
-													'<img src="img/3dturn.png" style="padding:0; width:7.5rem;"></img>'+
-													'<a href="demo/3dturn/3dturn.html" target="_blank">《饥荒》3D轮转角色选择</a>'+
+													'<img src="img/3dround.png" style="padding:0; width:7.5rem;"></img>'+
+													'<a href="demo/3dround/3dround.html" target="_blank">《饥荒》3D轮转角色选择</a>'+
 												'</li>'+
 												'<li>'+
 													'<img src="img/3dcube.png" style="padding:0; width:7.5rem;"></img>'+
