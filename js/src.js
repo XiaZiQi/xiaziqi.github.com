@@ -15,7 +15,7 @@ var loadArr=[
         {src:'https://xiaziqi.github.io/img/bg5-2.jpg'},
         {src:'https://xiaziqi.github.io/img/bg5-3.jpg'},
         {src:'https://xiaziqi.github.io/img/3dcube.png'},
-        {src:'https://xiaziqi.github.io/img/3dturn.png'},
+        {src:'https://xiaziqi.github.io/img/3dround.png'},
         {src:'https://xiaziqi.github.io/img/angular.png'},
         {src:'https://xiaziqi.github.io/img/button.png'},
         {src:'https://xiaziqi.github.io/img/c3.png'},
