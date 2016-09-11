@@ -319,6 +319,47 @@
 		var oBoss=document.getElementById('boss');
 		
 
+		var oLoad=document.getElementById('load');
+        var oLoading=document.getElementById('loading');
+
+        var loadArr=[
+        	{s:'img/bg1-1.jpg'},
+        	{s:'img/bg1-2.jpg'},
+        	{s:'img/bg1-3.jpg'},
+        	{s:'img/bg2-1.jpg'},
+        	{s:'img/bg2-2.jpg'},
+        	{s:'img/bg2-3.jpg'},
+        	{s:'img/bg3-1.jpg'},
+        	{s:'img/bg3-2.jpg'},
+        	{s:'img/bg3-3.jpg'},
+        	{s:'img/bg4-1.jpg'},
+        	{s:'img/bg4-2.jpg'},
+        	{s:'img/bg4-3.jpg'},
+        	{s:'img/bg5-1.jpg'},
+        	{s:'img/bg5-2.jpg'},
+        	{s:'img/bg5-3.jpg'}
+
+        ];
+        for(var i=0;i<=14;i++){
+            var oImg=new Image();
+            var iCount=0;
+
+            oImg.onload=function(){
+                iCount++;
+                var scale=iCount/14;
+
+                oLoading.style.width=scale*300+'px';
+            };
+            oImg.onerror=function(){
+                console.log('错了错了！加载失败')
+            };
+            oImg.src=loadArr[i].s;
+            if (i==14) {
+            	oLoad.style.display='none';
+            	oBox.style.display='block';
+            }
+        }
+
 		for (var i = 0; i < 5; i++) {
 			var oLi=document.createElement('li');
 			var oNavbor=document.createElement('p');
