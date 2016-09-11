@@ -160,19 +160,19 @@
 										'<div id="scroller1">'+
 											'<ul class="ulist">'+
 												'<li>'+
-													'<img src="img/screen1.png" style="padding:0; width:7.5rem;"></img>'+
+													'<img src="img/screen1.jpg" style="padding:0; width:7.5rem;"></img>'+
 													'<a href="demo/mac/mac.html" target="_blank">仿Mac系统桌面</a>'+
 												'</li>'+
 												'<li>'+
-													'<img src="img/3dround.png" style="padding:0; width:7.5rem;"></img>'+
+													'<img src="img/3dround.jpg" style="padding:0; width:7.5rem;"></img>'+
 													'<a href="demo/3dround/3dround.html" target="_blank">《饥荒》3D轮转角色选择</a>'+
 												'</li>'+
 												'<li>'+
-													'<img src="img/3dcube.png" style="padding:0; width:7.5rem;"></img>'+
+													'<img src="img/3dcube.jpg" style="padding:0; width:7.5rem;"></img>'+
 													'<a href="demo/cube/3dcube.html" target="_blank">3D旋转魔方</a>'+
 												'</li>'+
 												'<li>'+
-													'<img src="img/jigsaw.png" style="padding:0; width:7.5rem;"></img>'+
+													'<img src="img/jigsaw.jpg" style="padding:0; width:7.5rem;"></img>'+
 													'<a href="demo/jigsaw/jigsaw.html" target="_blank">拼图游戏</a>'+
 												'</li>'+
 												
@@ -198,7 +198,7 @@
 										'<div id="scroller2">'+
 											'<ul class="ulist">'+
 												'<li>'+
-													'<img src="img/photo.png" style="padding:0; width:7.5rem;"></img>'+
+													'<img src="img/photo.jpg" style="padding:0; width:7.5rem;"></img>'+
 													'<a href="demo/photo/photo.html" target="_blank">个人业余摄影作品</a>'+
 												'</li>'+
 												
