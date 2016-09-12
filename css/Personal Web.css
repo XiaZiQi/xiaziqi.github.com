@@ -384,6 +384,7 @@ body {
   border: 5px solid #bbb;
   margin-left: -304px;
   border-radius: 30px;
+  background: #222;
 }
 #loadbg #load .name {
   position: absolute;
