@@ -317,12 +317,11 @@
 		var timer4=null;
 		var timer5=null;
 		var oBoss=document.getElementById('boss');
-		
 
 		var oLoad=document.getElementById('load');
         var oLoading=document.getElementById('loading');
-
-        
+        var loadSpan=oLoading.getElementsByTagName('span')[0];
+        // oBody.style.background='url(../img/loadbg.jpg) no-repeat center center';
         for(var i=0;i<77;i++){
             var oImg=new Image();
             var iCount=0;
@@ -330,10 +329,12 @@
             oImg.onload=function(){
                 iCount++;
                 var scale=iCount/77;
-                oLoading.style.width=scale*300+'px';
+                oLoading.style.width=scale*600+'px';
+                loadSpan.innerHTML=parseInt(scale*100)+'%';
                 if (iCount==77) {
 	            	oLoad.style.display='none';
 	            	oBox.style.display='block';
+
 	            	allLoad();
 	            }
             };
