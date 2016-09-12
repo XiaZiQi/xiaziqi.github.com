@@ -260,7 +260,7 @@
 													'<a href="javascript:;">XZQ66888</a>'+
 												'</li>'+
 												'<li>'+
-													'<img src="img/QQ.jpg" style="padding:0;margin:2rem; width:3.5rem; height:3.5rem; border:none;"></img>'+
+													'<img src="img/qq.jpg" style="padding:0;margin:2rem; width:3.5rem; height:3.5rem; border:none;"></img>'+
 													'<a href="javascript:;">443566888</a>'+
 												'</li>'+
 												
