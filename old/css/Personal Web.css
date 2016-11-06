@@ -1,0 +1,431 @@
+body,
+html {
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+body {
+  -ms-touch-action: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+#box {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: none;
+}
+#bgs {
+  width: 100%;
+  min-width: 1000px;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+}
+#bgs #pl {
+  width: 2.5rem;
+  height: 5rem;
+  background: red;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  z-index: 30;
+  cursor: pointer;
+}
+#bgs #pr {
+  width: 2.5rem;
+  height: 5rem;
+  background: red;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  z-index: 30;
+  cursor: pointer;
+}
+.bg1 {
+  background: url(../img/bg1-2.jpg) no-repeat center center;
+}
+.bg1 span {
+  background: url(../img/bg1-1.jpg) no-repeat center center;
+}
+.bg2 {
+  background: url(../img/bg2-2.jpg) no-repeat center center;
+}
+.bg2 span {
+  background: url(../img/bg2-1.jpg) no-repeat center center;
+}
+.bg3 {
+  background: url(../img/bg3-2.jpg) no-repeat center center;
+}
+.bg3 span {
+  background: url(../img/bg3-1.jpg) no-repeat center center;
+}
+.bg4 {
+  background: url(../img/bg4-2.jpg) no-repeat center center;
+}
+.bg4 span {
+  background: url(../img/bg4-1.jpg) no-repeat center center;
+}
+.bg5 {
+  background: url(../img/bg5-2.jpg) no-repeat center center;
+}
+.bg5 span {
+  background: url(../img/bg5-1.jpg) no-repeat center center;
+}
+#bg0 {
+  position: absolute;
+  width: 100%;
+  height: 5rem;
+  top: 3rem;
+  left: 0;
+}
+#bg0 #nav {
+  width: 90rem;
+  height: 5rem;
+  position: relative;
+}
+#bg0 #nav .navbor {
+  position: absolute;
+  width: 0rem;
+  height: 0rem;
+  z-index: 290;
+  display: none;
+  top: -0.3rem;
+  border-radius: 50%;
+  border: 0.3rem solid #CD235C;
+  overflow: hidden;
+  opacity: 0.92;
+  filter: alpha(opacity=92);
+}
+#bg0 #nav li {
+  width: 0;
+  height: 0;
+  background: #000;
+  position: absolute;
+  top: -8rem;
+  transition: all 1s cubic-bezier(1, -2.55, 0, 3.83);
+  border: 0px solid #000;
+  cursor: pointer;
+  z-index: 300;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#bg0 #nav li .mask {
+  position: absolute;
+  left: -6.05rem;
+  top: 0;
+  background: #CD235C;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  opacity: 0.92;
+  filter: alpha(opacity=92);
+  z-index: 310;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 5rem;
+  font-weight: bold;
+}
+#bg0 #nav li .iconfont {
+  font-size: 3rem;
+  text-align: center;
+  line-height: 5rem;
+  color: #fff;
+  font-family: 'iconfont';
+  display: none;
+}
+#music {
+  width: 15rem;
+  height: 1.5rem;
+  position: absolute;
+  z-index: 50;
+  bottom: 0;
+  right: 0;
+}
+.bg1,
+.bg2,
+.bg3,
+.bg4,
+.bg5 {
+  width: 100%;
+  min-width: 1000px;
+  height: 100%;
+  background-size: 100% 100%;
+  position: relative;
+  overflow: hidden;
+}
+.bg1 span,
+.bg2 span,
+.bg3 span,
+.bg4 span,
+.bg5 span {
+  position: absolute;
+  min-width: 62.25px;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background-size: 96rem 800%;
+  transform-style: preserve-3d;
+  transition: 1s all cubic-bezier(0.73, 0.07, 0.31, 0.96);
+}
+.bg1 .conbg,
+.bg2 .conbg,
+.bg3 .conbg,
+.bg4 .conbg,
+.bg5 .conbg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background: #fff;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  border-radius: 3rem 3rem;
+  z-index: 200;
+  overflow: hidden;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  background: #CD235C;
+  padding: 0;
+  color: #eee;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: bold;
+  z-index: 255;
+  cursor: move;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5rem;
+  background: #444;
+  padding: 0;
+  border-top: 0.05rem solid #444;
+  z-index: 255;
+}
+.footer .ll {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-top: -1rem;
+  background: url(../img/l3.png) no-repeat center center;
+  background-size: 1.6rem 1.6rem;
+}
+.footer .lh {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-top: -1rem;
+  background: url(../img/l4.png) no-repeat center center;
+  background-size: 1.6rem 1.6rem;
+}
+.wrapper {
+  position: absolute;
+  top: 2.5rem;
+  bottom: 2.5rem;
+  left: 0;
+  width: 100%;
+  background: #ccc;
+  overflow: hidden;
+}
+#scroller0,
+#scroller1,
+#scroller2,
+#scroller3,
+#scroller4 {
+  position: absolute;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -o-text-size-adjust: none;
+  text-size-adjust: none;
+}
+#scroller0 ul,
+#scroller1 ul,
+#scroller2 ul,
+#scroller3 ul,
+#scroller4 ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+}
+#scroller0 ul li,
+#scroller1 ul li,
+#scroller2 ul li,
+#scroller3 ul li,
+#scroller4 ul li {
+  padding: 0 0.5rem;
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+  background-color: #fafafa;
+}
+.barbg {
+  position: absolute;
+  top: -50%;
+  right: 0.7rem;
+  width: 0.2rem;
+  height: 100%;
+  background: -webkit-linear-gradient(top, #cd235c -50%, #cd235c 0%, #666666 0%, #666666 50%);
+  z-index: 260;
+  border-left: 1px solid #999;
+  border-right: 1px solid #999;
+}
+.bar {
+  width: 1.6rem;
+  height: 1.6rem;
+  top: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  margin-left: -0.8rem;
+  cursor: pointer;
+  background: url(../img/button.png) center center no-repeat;
+  background-size: 1.6rem 1.6rem;
+}
+.opabarbg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -15rem;
+  margin-top: -0.25rem;
+  width: 30rem;
+  height: 0.2rem;
+  background: -webkit-linear-gradient(left, #cd235c 0%, #cd235c 50%, #666666 50%, #666666 100%);
+  z-index: 270;
+  border: 1px solid #999;
+  border-radius: 0.1rem;
+}
+.opabarbg .opabar {
+  position: absolute;
+  left: 50%;
+  margin-left: -0.8rem;
+  top: 50%;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-top: -0.8rem;
+  cursor: pointer;
+  background: red;
+  z-index: 270;
+  border-radius: 50%;
+  background: url(../img/button.png) center center no-repeat;
+  background-size: 1.6rem 1.6rem;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('iconfont.eot');
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('iconfont.woff') format('woff'), /* chrome、firefox */ url('iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('iconfont.svg#iconfont') format('svg');
+  
+  /* IE9*/
+  /* iOS 4.1- */
+}
+.ulist li img {
+  width: 5rem;
+  height: 7.5rem;
+  float: left;
+  border-right: 1px solid #ccc;
+  padding: 0 1.5rem 0 1rem;
+}
+.ulist li a {
+  float: left;
+  line-height: 7.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  padding-left: 3rem;
+}
+#loadbg {
+  width: 100%;
+  height: 100%;
+  background: url(../img/loadbg.jpg) no-repeat center center;
+}
+#loadbg #load {
+  position: absolute;
+  bottom: 250px;
+  left: 50%;
+  height: 33px;
+  width: 608px;
+  border: 5px solid #bbb;
+  margin-left: -304px;
+  border-radius: 30px;
+  background: #222;
+}
+#loadbg #load .name {
+  position: absolute;
+  bottom: 160px;
+  left: 50%;
+  margin-left: -200px;
+  width: 400px;
+  height: 60px;
+}
+#loadbg #load .name p {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: #bbb;
+}
+#loadbg #load .pw {
+  position: absolute;
+  bottom: 260px;
+  left: 50%;
+  margin-left: -200px;
+  width: 400px;
+  height: 60px;
+}
+#loadbg #load .pw p {
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  color: #bbb;
+}
+#loadbg #load #loading {
+  background: #bbb;
+  height: 25px;
+  border-radius: 30px;
+  margin: 4px;
+  position: relative;
+}
+#loadbg #load #loading span {
+  position: absolute;
+  right: 10px;
+  line-height: 25px;
+  font-size: 18px;
+  color: #222;
+  font-weight: bold;
+}

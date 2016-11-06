@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="myApp">
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>bolg</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/Personal Web2.css">
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" media="screen" />
+	<script src="js/jquery-3.1.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/data.js"></script>
+	<script src="js/myWeb2.js"></script>
+	<script src="js/angular.js"></script>
+	<style>
+
+	</style>
+	<script>
+
+	</script>
+</head>
+<body data-spy="scroll" data-target="#navbar-box">
+	<div id="navbar-box" data-spy="affix" data-offset-top="79">
+		<header class="navbar navbar-inverse">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".collapse">
+		        	<span class="sr-only">Toggle Navigation</span>
+		        	<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span>
+		        </button>
+				<a class="navbar-brand" href="index.html"><img src="img/xzq.png" style="width:45px;height:45px;"></a>
+			</div>
+			<div class="collapse navbar-collapse navbar-responsive-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="index.html">主页</a></li>
+					<li class="active"><a href="javascript:;">BOLG</a></li>
+					<li id="_tooltip" data-toggle="tooltip"><a href="old/index.html">OLD</a></li>
+					<li role="presentation" class="divider"></li>
+				</ul>
+				<ul class="nav navbar-nav pull-right">
+					<li>
+						<form class="form-group navform">
+							<input type="text" class="form-control" placeholder="Search">
+						</form>
+					</li>
+					<li>
+						<div class="btn-group navbtn">
+							<button class="btn btn-warning nav-btn-signup">注册</button>
+							<button class="btn btn-success nav-btn-login">登录</button>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="modal fade" id="modal-signup">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h2>Sign Up</h2>
+						</div>
+						<div class="modal-body">
+							<form class="form-group">
+								<label>Username：
+									<input type="text" class="form-control">
+								</label>
+							</form>
+							<div class="modalfont">用户名必须是邮箱格式 #例:XR_sally@hotmail.com</div>
+							<form class="form-group">
+								<label>Password：
+									<input type="text" class="form-control">
+								</label>
+							</form>
+							<div class="modalfont">6~12位字母或者数字，开头必须为字母。</div>
+							<form class="form-group">
+								<label>Confirm password：
+									<input type="text" class="form-control">
+								</label>
+							</form>
+							<div class="modalfont">请确认您之前输入的密码。</div>
+						</div>
+						<div class="modal-footer">
+							<button id="loading-btn-signup" type="button" class="btn btn-warning" data-loading-text="提交中...">确定</button>
+							<button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="modal-login">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								<span>&times;</span>
+							</button>
+							<h2>Log In</h2>
+						</div>
+						<div class="modal-body">
+							<form class="form-group">
+								<label>Username:
+									<input type="text" class="form-control">
+								</label>
+							</form>
+							<form class="form-group">
+								<label>Password:
+									<input type="text" class="form-control">
+								</label>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button id="loading-btn-login" class="btn btn-success" type="button" data-loading-text="登录中...">确定</button>
+							<button class="btn btn-danger" type="button" data-dismiss="modal">关闭</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+	</div>
+	<div class="blog-body container" ng-controller="tagsrc">
+		<div class="row">
+			<div id="blog-content-show" class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+				<!-- 博客内容显示区 -->
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+				<h1>Postings</h1>
+				<div class="media media-right-size">
+					<a class="pull-left Achange" href="javascript:;">
+						<div class="shade"></div>
+						<button type="button" class="media-btn btn btn-default">Opon</button>
+						<img class="media-object media-object-size" src="img/icon_iphone.png">
+					</a>
+					<div class="media-body">
+						<h4 class="media-heading">移动端开发之viewport</h4>
+						<div>viewport分visual viewport和layout viewport，visual viewport...</div>
+					</div>
+				</div>
+				<div class="media media-right-size">
+					<a class="pull-left Achange" href="javascript:;">
+						<div class="shade"></div>
+						<button type="button" class="media-btn btn btn-default">Opon</button>
+						<img class="media-object media-object-size" src="img/jquery.png">
+					</a>
+					<div class="media-body">
+						<h4 class="media-heading">jQuery事件绑定的最佳实践</h4>
+						<div>什么是deferred对象？ 开发网站的过程中，我们经常遇到某些耗时很长的javascript操作...</div>
+					</div>
+				</div>
+				<div class="media media-right-size">
+					<a class="pull-left Achange" href="javascript:;">
+						<div class="shade"></div>
+						<button type="button" class="media-btn btn btn-default">Opon</button>
+						<img class="media-object media-object-size" src="img/icon_code.png">
+					</a>
+					<div class="media-body">
+						<h4 class="media-heading">前端性能优化</h4>
+						<div>随着互联网的发展，前端优化越来越被人们重视，在一个大型的大型电子商务网站技术架构中，前端架构一定是一项必不可少的工作...</div>
+					</div>
+				</div>
+				<div class="media media-right-size">
+					<a class="pull-left Achange" href="javascript:;">
+						<div class="shade"></div>
+						<button type="button" class="media-btn btn btn-default">Opon</button>
+						<img class="media-object media-object-size" src="img/icon_wechat.png">
+					</a>
+					<div class="media-body">
+						<h4 class="media-heading">微信公众平台开发：进阶篇(Web App开发入门)</h4>
+						<div>开发成本较低。使用web开发技术就可以轻松的完成web app的开发...</div>
+					</div>
+				</div>
+				<div class="media media-right-size">
+					<a class="pull-left Achange" href="javascript:;">
+						<div class="shade"></div>
+						<button type="button" class="media-btn btn btn-default">Opon</button>
+						<img class="media-object media-object-size" src="img/icon_mweb.jpg">
+					</a>
+					<div class="media-body">
+						<h4 class="media-heading">手机移动端WEB资源整合</h4>
+						<div>移动端字体单位font-size选择px还是rem？</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="container footer-bg">
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-5 col-xs-5"><strong>微信：</strong>XZQ66888</div>
+				<div class="col-lg-3 col-md-3 col-sm-7 col-xs-7"><strong>邮箱：</strong>443566888@qq.com</div>
+				<div class="col-lg-3 col-md-3 col-sm-5 col-xs-5"><strong>QQ：</strong>443566888</div>
+				<div class="col-lg-3 col-md-3 col-sm-7 col-xs-7"><strong>电话：</strong>18610808458</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">Copyright ©2016 xiaziqi.github.io All Rights Reserved</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

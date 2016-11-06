@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>夏子奇个人站</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/Personal Web.css">
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" media="screen" />
+	<script src="js/jquery-3.1.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/myWeb.js"></script>
+	<style>
+
+	</style>
+	<script>
+
+	</script>
+</head>
+<body data-spy="scroll" data-target="#navbar-box">
+	
+	<div id="navbar-box" data-spy="affix" data-offset-top="79">
+		<header class="navbar navbar-inverse">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".collapse">
+		        	<span class="sr-only">Toggle Navigation</span>
+		        	<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span>
+		        </button>
+				<a class="navbar-brand" href="index.html"><img src="img/xzq.png" style="width:45px;height:45px;"></a>
+			</div>
+			<div class="collapse navbar-collapse navbar-responsive-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="index.html">主页</a></li>
+					<li><a href="index2.html">BOLG</a></li>
+					<li id="_tooltip" data-toggle="tooltip"><a href="old/index.html">OLD</a></li>
+					<li role="presentation" class="divider"></li>
+				</ul>
+				<!-- <div role="presentation" class="divider"></div> -->
+				<ul class="nav navbar-nav pull-right">
+					<li>
+						<form class="form-group navform">
+							<input type="text" class="form-control" placeholder="Search">
+						</form>
+					</li>
+					<li>
+						<div class="btn-group navbtn">
+							<button class="btn btn-warning nav-btn-signup">注册</button>
+							<button class="btn btn-success nav-btn-login">登录</button>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="modal fade" id="modal-signup">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h2>Sign Up</h2>
+						</div>
+						<div class="modal-body">
+							<form class="form-group">
+								<label>Username：
+									<input type="text" class="form-control">
+								</label>
+							</form>
+							<div class="modalfont">用户名必须是邮箱格式 #例:XR_sally@hotmail.com</div>
+							<form class="form-group">
+								<label>Password：
+									<input type="text" class="form-control">
+								</label>
+							</form>
+							<div class="modalfont">6~12位字母或者数字，开头必须为字母。</div>
+							<form class="form-group">
+								<label>Confirm password：
+									<input type="text" class="form-control">
+								</label>
+							</form>
+							<div class="modalfont">请确认您之前输入的密码。</div>
+						</div>
+						<div class="modal-footer">
+							<button id="loading-btn-signup" type="button" class="btn btn-warning" data-loading-text="提交中...">确定</button>
+							<button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="modal-login">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								<span>&times;</span>
+							</button>
+							<h2>Log In</h2>
+						</div>
+						<div class="modal-body">
+							<form class="form-group">
+								<label>Username:
+									<input type="text" class="form-control">
+								</label>
+							</form>
+							<form class="form-group">
+								<label>Password:
+									<input type="text" class="form-control">
+								</label>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button id="loading-btn-login" class="btn btn-success" type="button" data-loading-text="登录中...">确定</button>
+							<button class="btn btn-danger" type="button" data-dismiss="modal">关闭</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+	</div>
+	<div class="carousel slide" id="carousel" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carousel" class="active" data-slide-to="0"></li>
+			<li data-target="#carousel" data-slide-to="1"></li>
+			<li data-target="#carousel" data-slide-to="2"></li>
+			<li data-target="#carousel" data-slide-to="3"></li>
+			<li data-target="#carousel" data-slide-to="4"></li>
+		</ol>
+		<a id="lead-link" href="javascript:;">
+			<div class="text-center">Demo</div>
+			<div class="glyphicon glyphicon-chevron-down indicate"></div>
+		</a>
+		<ul class="carousel-inner">
+			<li class="item active">
+				<a data-target="#carousel" href="javascript:;"><div carousel-url="0.jpg"></div></a>
+			</li>
+			<li class="item">
+				<a data-target="#carousel" href="javascript:;"><div carousel-url="1.jpg"></div></a>
+			</li>
+			<li class="item">
+				<a data-target="#carousel" href="javascript:;"><div carousel-url="2.jpg"></div></a>
+			</li>
+			<li class="item">
+				<a data-target="#carousel" href="javascript:;"><div carousel-url="3.jpg"></div></a>
+			</li>
+			<li class="item">
+				<a data-target="#carousel" href="javascript:;"><div carousel-url="4.jpg"></div></a>
+			</li>
+		</ul>
+		<div data-target="#carousel" class="left carousel-control" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</div>
+		<div data-target="#carousel" class="right carousel-control" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</div>
+	</div>
+	<div class="demo container" id="demo">
+		<h2 class="text-center">简单实用Demo</h2>
+		<p class="text-center">持续更新中...</p>
+		<div class="row mt50">
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<div class="thumbnail">
+					<div class="caption">
+						<a href="demo/cube/3dcube.html" target="_blank">
+							<img class="imgscale" src="img/3dcube.jpg">
+						</a>
+					</div>
+					<h3 class="media-heading">Demo-3D 魔方</h3>
+					<p>主要采用Css3动画效果</p>
+					<a href="demo/cube/3dcube.html" target="_blank" class="btn btn-primary">效果演示</a>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<div class="thumbnail">
+					<div class="caption">
+						<a href="demo/photo/photo.html" target="_blank">
+							<img class="imgscale" src="img/photo.jpg">
+						</a>
+					</div>
+					<h3 class="media-heading">滑动相册</h3>
+					<p>运动库应用</p>
+					<a href="demo/photo/photo.html" target="_blank" class="btn btn-primary">效果演示</a>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<div class="thumbnail">
+					<div class="caption">
+						<a  href="demo/3dround/3dround.html" target="_blank">
+							<img class="imgscale" src="img/3dround.jpg">
+						</a>
+					</div>
+					<h3 class="media-heading">3D轮播图片</h3>
+					<p>运动库+Css3</p>
+					<a  href="demo/3dround/3dround.html" target="_blank" class="btn btn-primary">效果演示</a>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<div class="thumbnail">
+					<div class="caption">
+						<a  href="demo/mac/mac.html" target="_blank">
+							<img class="imgscale" src="img/screen1.jpg">
+						</a>
+					</div>
+					<h3 class="media-heading">仿iMac桌面</h3>
+					<p>监控用户鼠标操作位置变化</p>
+					<a  href="demo/mac/mac.html" target="_blank" class="btn btn-primary">效果演示</a>
+				</div>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<div class="thumbnail">
+					<div class="caption">
+						<a  href="demo/jigsaw/jigsaw.html" target="_blank">
+							<img class="imgscale" src="img/jigsaw.jpg">
+						</a>
+					</div>
+					<h3 class="media-heading">简易拼图游戏</h3>
+					<p>拖动换位效果实例训练</p>
+					<a  href="demo/jigsaw/jigsaw.html" target="_blank" class="btn btn-primary">效果演示</a>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<div class="thumbnail">
+					<div class="caption">
+						<a href="javascript:;">
+							<img class="imgscale" src="img/3dcube.jpg">
+						</a>
+					</div>
+					<h3 class="media-heading">Demo-3D 魔方</h3>
+					<p>主要采用Css3动画效果</p>
+					<a href="#" class="btn btn-primary">效果演示</a>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<div class="thumbnail">
+					<div class="caption">
+						<a href="javascript:;">
+							<img class="imgscale" src="img/3dcube.jpg">
+						</a>
+					</div>
+					<h3 class="media-heading">Demo-3D 魔方</h3>
+					<p>主要采用Css3动画效果</p>
+					<a href="#" class="btn btn-primary">效果演示</a>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<div class="thumbnail">
+					<div class="caption">
+						<a href="javascript:;">
+							<img class="imgscale" src="img/3dcube.jpg">
+						</a>
+					</div>
+					<h3 class="media-heading">Demo-3D 魔方</h3>
+					<p>主要采用Css3动画效果</p>
+					<a href="#" class="btn btn-primary">效果演示</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="grasp container">
+		<div class="row">
+			<h2 class="text-center">技术支持</h2>
+			<p class="text-center">学无止境...</p>
+			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+				<div class="media">
+					<div class="media-list">
+						<a href="http://getbootstrap.com/" target="_blank" class="pull-left">
+							<img class="media-object mediaImage" src="img/bootstrap-logo.png">
+						</a>
+					</div>
+					<div class="media-body">
+						<h3 class="media-heading">Bootstrap</h3>
+						<p><a href="http://getbootstrap.com/" target="_blank">getbootstrap.com</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+				<div class="media">
+					<div class="media-list">
+						<a href="#" class="pull-left">
+							<img class="media-object mediaImage" src="img/c3.png">
+						</a>
+					</div>
+					<div class="media-body">
+						<h3 class="media-heading">Css3&nbsp;&nbsp;&nbsp;</h3>
+						<p><a href="http://www.w3schools.com/" target="_blank">w3schools.com</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+				<div class="media">
+					<div class="media-list">
+						<a href="#" class="pull-left">
+							<img class="media-object mediaImage" src="img/h5.png">
+						</a>
+					</div>
+					<div class="media-body">
+						<h3 class="media-heading">HTML5</h3>
+						<p><a href="http://www.w3schools.com/" target="_blank">w3schools.com</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+				<div class="media">
+					<div class="media-list">
+						<a href="#" class="pull-left">
+							<img class="media-object mediaImage" src="img/angular.png">
+						</a>
+					</div>
+					<div class="media-body">
+						<h3 class="media-heading">Angular.js</h3>
+						<p><a href="https://angularjs.org/" target="_blank">angularjs.org</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+				<div class="media">
+					<div class="media-list">
+						<a href="#" class="pull-left">
+							<img class="media-object mediaImage" src="img/jquery.jpg">
+						</a>
+					</div>
+					<div class="media-body">
+						<h3 class="media-heading">jQuery</h3>
+						<p><a href="http://www.w3schools.com/" target="_blank">jquery.com</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+				<div class="media">
+					<div class="media-list">
+						<a href="#" class="pull-left">
+							<img class="media-object mediaImage" src="img/github.jpg">
+						</a>
+					</div>
+					<div class="media-body">
+						<h3 class="media-heading">Github&nbsp;</h3>
+						<p><a href="https://github.com/" target="_blank">github.com</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="container footer-bg">
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><strong>微信：</strong>XZQ66888</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><strong>邮箱：</strong>443566888@qq.com</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><strong>电话：</strong>18610808458</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><strong>QQ：</strong>443566888</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">Copyright ©2016 xiaziqi.github.io All Rights Reserved</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
