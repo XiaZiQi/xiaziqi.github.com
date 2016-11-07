@@ -1,7 +1,7 @@
 define(function(require,exports,module){
         
         exports.loadArr=[
-                {src:'old/img/bg1-1.jpg'},
+                {src:'img/bg1-1.jpg'},
                 {src:'https://xiaziqi.github.com/old/img/bg1-2.jpg'},
                 {src:'https://xiaziqi.github.com/old/img/bg1-3.jpg'},
                 {src:'https://xiaziqi.github.com/old/img/bg2-1.jpg'},
