@@ -1,0 +1,229 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>wish</title>
+<link rel="stylesheet" href="./Css/index.css" />
+<script src="ajaxjson.js"></script>
+<script>
+    function ran(n,m){
+        return parseInt(Math.random()*(m-n)+n);
+    }
+    window.onload=function(){
+        var oMain=document.getElementById('main');
+        var oSend=document.getElementById('send');
+        var oSendForm=document.getElementById('send-form');
+        var oClose=document.getElementById('close');
+        var oSendWish=document.getElementById('send-btn');
+        var clientW=document.documentElement.clientWidth;
+        var clientH=document.documentElement.clientHeight;
+        var oUserName=document.getElementById('username');
+        var oContent=document.getElementById('content');
+        var oLayer=document.getElementById('layer');
+        var oPhiz=document.getElementById('phiz');
+        var arr3=[['抓狂'],['抱抱'],['害羞'],['酷'],['嘻嘻'],['太开心'],['偷笑'],['钱'],['花心'],['挤眼']];
+        var zIndex=1;
+
+        var url='wish.php';
+
+        oSend.onclick=function(){
+            oSendForm.style.display='block';
+            oSendForm.style.left=(clientW-oSendForm.offsetWidth)/2+'px';
+            oLayer.style.display='block';
+        }
+        oClose.onclick=function(){
+            oSendForm.style.display='none';
+            oLayer.style.display='none';
+        }
+        oSendWish.onclick=function(){
+            // 1. 发表许愿
+            // wish.php?act=add&username=xxx&content=xxx
+            // {error:0, msg:xxx}
+            ajax({
+                url:url,
+                data:{
+                    act:'add',
+                    username:oUserName.value,
+                    content:oContent.value
+                },
+                fnSucc:function(str){
+                    var json=eval('('+str+')');
+                    if (json.error) {
+                        alert('创建愿望失败');
+                    }else{
+                        var oDl=createMsg(oUserName.value,oContent.value);
+                        oMain.appendChild(oDl);
+                    }
+                    getAllmsg();
+                    oSendForm.style.display='none';
+                    oLayer.style.display='none';
+                    oUserName.value='';
+                    oContent.value='';
+                }
+            })
+        }
+        function getAllmsg(){
+            // 2. 获取所有心愿
+            // wish.php?act=get
+            // {error:0, msg:[{'id':1, 'username':'xxx', 'content':'xxx'},{},{},{}.......]}
+            oMain.innerHTML='';
+            ajax({
+                url:url,
+                data:{
+                    act:'get'
+                },
+                fnSucc:function(str){
+                    var json=new Function('return '+str)();
+                    if (json.error){
+                        alert('获取所有心愿失败');
+                    }else{
+                        var arr=json.msg;
+                        for (var i = 0; i < arr.length; i++) {
+                            var oDl=createMsg(arr[i].username,arr[i].content,arr[i].id,arr[i].time);
+                            drag(oDl);
+                            oMain.appendChild(oDl);
+                        }
+                    }
+                }
+            })
+        }
+        getAllmsg();
+        function drag(obj){
+            obj.onmousedown=function(ev){
+                var oEvent=ev||event;
+                disX=oEvent.clientX-obj.offsetLeft;
+                disY=oEvent.clientY-obj.offsetTop;
+                obj.style.zIndex=zIndex++;
+                document.onmousemove=function(ev){
+                    var oEvent=ev||event;
+                    l=oEvent.clientX-disX;
+                    t=oEvent.clientY-disY;
+                    obj.style.left=l+'px';
+                    obj.style.top=t+'px';
+                }
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                }
+                return false;
+            }
+        }
+        function createMsg(username,content,id,time){
+            var oDl=document.createElement('dl');
+            var oDate=new Date();
+            oDate.setTime(time*1000);
+            oDl.className='paper a'+ran(1,6)+'';
+            var str=oDate.getHours()+':'+oDate.getMinutes();
+            oDl.innerHTML='<dt>'
+                        +'<span class="username">'+username+'</span>'
+                        +'<span class="num">No.00001</span>'
+                        +'</dt>'
+                        +'<dd class="content">'+toFace(content)+'</dd>'
+                        +'<dd class="bottom">'
+                        +'<span class="time">今天'+str+'</span>'
+                        +'<a href="javascript:;" class="close"></a>'
+                        +'</dd>';
+            var aA=oDl.getElementsByTagName('a')[0];
+            aA.onclick=function(){
+                // 3. 删除心愿
+                //  wish.php?act=delete&id=0;
+                // {error:1, msg:xxx}
+                ajax({
+                    url:url,
+                    data:{
+                        act:'delete',
+                        id:id
+                    },
+                    fnSucc:function(str){
+                        var json=new Function('return '+str)();
+                        if (json.error) {
+                            alert('删除愿望失败');
+                        }else{
+                            oMain.removeChild(oDl);
+                        }
+                    }
+                })
+            }
+            oDl.style.left=ran(0,clientW-400)+'px';
+            oDl.style.top=ran(0,clientH-360)+'px'; 
+            return oDl;      
+        }
+        function toFace(str){
+            var arr1=[['抓狂'],['抱抱'],['害羞'],['酷'],['嘻嘻'],['太开心'],['偷笑'],['钱'],['花心'],['挤眼']];
+            var arr2=['zhuakuang','baobao','haixiu','ku','xixi','taikaixin','touxiao','qian','huaxin','jiyan'];
+            for (var i = 0; i < arr1.length; i++) {    
+                if(str.indexOf(arr1[i])!=-1){
+                    str=str.replace(arr1[i],'<img src="./Images/phiz/'+arr2[i]+'.gif"/>');
+                }
+            }
+            return str; 
+        }
+        var oFace=oPhiz.children;
+        for (var i = 0; i < arr3.length; i++) {
+            ;(function(index){
+                oFace[i].onclick=function(){
+                    oContent.value=oContent.value+arr3[index];
+                }
+            })(i);  
+        }
+    }
+        
+</script>
+</head>
+<body>
+<div id='top'>
+    <span id='send'></span>
+</div>
+<div id='main'>
+    <!-- <dl class='paper a1'>
+        <dt>
+            <span class='username'>智能社</span>
+            <span class='num'>No.00001</span>
+        </dt>
+        <dd class='content'>欢迎来到智能社</dd>
+        <dd class='bottom'>
+            <span class='time'>今天08:30</span>
+            <a href="" class='close'></a>
+        </dd>
+    </dl> -->
+</div>
+
+<div id="layer"></div>
+
+<div id='send-form'>
+    <p class='title'><span>许下你的愿望</span><a href="javascript:;" id='close'></a></p>
+    <form action="" name='wish'>
+        <p>
+            <label for="username">昵称：</label>
+            <input type="text" name='username' id='username'/>
+        </p>
+        <p>
+            <label for="content">愿望：(您还可以输入&nbsp;<span id='font-num'>50</span>&nbsp;个字)</label>
+            <textarea name="content" id='content'></textarea>
+            <div id='phiz'>
+                <img src="./Images/phiz/zhuakuang.gif" alt="抓狂" />
+                <img src="./Images/phiz/baobao.gif" alt="抱抱" />
+                <img src="./Images/phiz/haixiu.gif" alt="害羞" />
+                <img src="./Images/phiz/ku.gif" alt="酷" />
+                <img src="./Images/phiz/xixi.gif" alt="嘻嘻" />
+                <img src="./Images/phiz/taikaixin.gif" alt="太开心" />
+                <img src="./Images/phiz/touxiao.gif" alt="偷笑" />
+                <img src="./Images/phiz/qian.gif" alt="钱" />
+                <img src="./Images/phiz/huaxin.gif" alt="花心" />
+                <img src="./Images/phiz/jiyan.gif" alt="挤眼" />
+            </div>
+        </p>
+        <span id='send-btn'></span>
+    </form>
+</div>
+<!--[if IE 6]>
+<script type="text/javascript" src="./Js/iepng.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix('#send,#close,.close','background');
+</script>
+<![endif]-->
+</body>
+</html>

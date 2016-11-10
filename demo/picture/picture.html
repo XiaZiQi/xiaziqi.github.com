@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8"/>
+	<title>图片浏览</title>
+	<script src="js/jquery-3.1.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<style>
+	*{margin: 0;padding: 0;list-style: none;}
+	html,body{
+		height:100%;
+		overflow:hidden;
+		background: #222;
+	}
+	ul{
+		width: 800px;
+		height: 500px;
+		position: relative;
+		margin:50px auto;
+		position: relative;
+	}
+	ul li{
+		width: 800px;
+		height: 500px;
+		border:1px solid #fff;
+		position:absolute;
+		color:#3CCB6A;
+		transition:0.6s all ease;		
+	}
+	img{
+		width:798px;
+		height:498px;
+	}
+	.container{
+		height: 100px;
+		margin:50px auto;
+	}
+	input{font-size: 20px; float:left;}
+	.now{
+		z-index: 100;
+		opacity:1;
+	}
+	.pre1{
+		transform:perspective(1200px) translateX(-320px) rotateY(60deg);
+		z-index: 50;opacity:0.7;
+	}
+	.pre2{
+		transform:perspective(1200px) translateX(-640px) rotateY(60deg);
+		z-index: 30;opacity:0;
+	}
+	.next1{
+		transform:perspective(1200px) translateX(320px) rotateY(-60deg);
+		z-index: 50;opacity:0.7;
+	}
+	.next2{
+		transform:perspective(1200px) translateX(640px) rotateY(-60deg);
+		z-index: 30;opacity:0;
+	}
+	.op0{
+		opacity:0;
+	}
+	</style>
+	<script>
+	window.onload=function(){
+		var aInput=document.querySelectorAll('button');
+		var aLi=document.querySelectorAll('li');
+		var arr=[];
+		var bReady=true;
+
+		for (var i = 0; i < aLi.length; i++) {
+			arr[i]=aLi[i].className;
+		}
+
+		aInput[0].onclick=function(){
+			if (!bReady) return;
+			bReady=false;
+			arr.push(arr.shift());
+			for (var i = 0; i < aLi.length; i++) {
+				aLi[i].className=arr[i];
+			}
+		}
+		
+		aInput[1].onclick=function(){
+			if (!bReady) return;
+			bReady=false;
+			arr.unshift(arr.pop());
+			for (var i = 0; i < aLi.length; i++) {
+				aLi[i].className=arr[i];
+			}
+		}
+		
+		for (var i = 0; i < aLi.length; i++) {
+			aLi[i].addEventListener('transitionend',function(){
+				bReady=true;
+			},false);
+		}
+	}
+	</script>
+</head>
+<body>
+	<div class="container text-center">
+		<button class="btn btn-primary" type="button">Pre</button>
+		<button class="btn btn-primary" type="button">Next</button>
+	</div>
+	<ul>
+		<li class="pre2"><img src="img/bg-0.jpg"></li>
+		<li class="pre1"><img src="img/bg-1.jpg"></li>
+		<li class="now"><img src="img/bg-2.jpg"></li>
+		<li class="next1"><img src="img/bg-3.jpg"></li>
+		<li class="next2"><img src="img/bg-4.jpg"></li>
+		<li class="op0"><img src="img/bg-5.jpg"></li>
+	</ul>
+</body>
+</html>
